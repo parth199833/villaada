@@ -82,23 +82,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
           >
             {item.name}
           </span>
-          {item.children && (
-            <span className="flex-1 flex" onClick={(e) => e.preventDefault()}>
-              <Disclosure.Button
-                as="span"
-                className="py-2.5 flex items-center justify-end flex-1 "
-              >
-                <ChevronDownIcon
-                  className="ml-2 h-4 w-4 text-neutral-500"
-                  aria-hidden="true"
-                />
-              </Disclosure.Button>
-            </span>
-          )}
         </Link>
-        {item.children && (
-          <Disclosure.Panel>{_renderMenuChild(item)}</Disclosure.Panel>
-        )}
       </Disclosure>
     );
   };
@@ -128,18 +112,9 @@ const NavMobile: React.FC<NavMobileProps> = ({
         {data.map(_renderItem)}
       </ul>
       <div className="flex items-center justify-between py-6 px-5">
-        <a
-          className="inline-block"
-          href="https://themeforest.net/item/chisfis-online-booking-nextjs-template/43399526"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <ButtonPrimary>Get Template</ButtonPrimary>
-        </a>
-
         <LangDropdown
           className="flex"
-          panelClassName="z-10 w-screen max-w-[280px] px-4 mb-3 right-3 bottom-full sm:px-0"
+          panelClassName="z-10 w-screen max-w-[280px] px-4 left-1 bottom-full sm:px-0"
         />
       </div>
     </div>
