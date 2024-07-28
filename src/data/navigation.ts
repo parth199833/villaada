@@ -167,7 +167,7 @@ const templatesChildrenMenus: NavItemType[] = [
 export const NAVIGATION_DEMO: NavItemType[] = [
 	{
 		id: ncNanoId(),
-		href: '/',
+		href: '/home-3',
 		name: 'Home',
 		type: 'dropdown',
 		children: demoChildMenus,
@@ -176,14 +176,14 @@ export const NAVIGATION_DEMO: NavItemType[] = [
 	{
 		id: ncNanoId(),
 		href: '/',
-		name: 'Five columns',
+		name: 'About Us',
 		type: 'megaMenu',
 		megaMenu: megaMenuDemo,
 	},
 	{
 		id: ncNanoId(),
 		href: '/listing-stay',
-		name: 'Listing Page',
+		name: 'Services',
 		type: 'dropdown',
 		children: [
 			{
@@ -270,7 +270,7 @@ export const NAVIGATION_DEMO: NavItemType[] = [
 	{
 		id: ncNanoId(),
 		href: '/author',
-		name: 'Templates',
+		name: 'Gallery',
 		type: 'dropdown',
 		children: templatesChildrenMenus,
 	},
@@ -278,7 +278,21 @@ export const NAVIGATION_DEMO: NavItemType[] = [
 	{
 		id: ncNanoId(),
 		href: '/blog',
-		name: 'Other pages',
+		name: 'Testimonial',
+		type: 'dropdown',
+		children: otherPageChildMenus,
+	},
+	{
+		id: ncNanoId(),
+		href: '/blog',
+		name: 'Surroundings',
+		type: 'dropdown',
+		children: otherPageChildMenus,
+	},
+	{
+		id: ncNanoId(),
+		href: '/blog',
+		name: 'Contact Us',
 		type: 'dropdown',
 		children: otherPageChildMenus,
 	},
