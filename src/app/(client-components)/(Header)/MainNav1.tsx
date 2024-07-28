@@ -19,9 +19,6 @@ const MainNav1: FC<MainNav1Props> = ({ className = '' }) => {
 				<div className="hidden flex-1 justify-start space-x-4 sm:space-x-10 md:flex">
 					<Logo className="w-48 self-center" />
 					<Navigation />
-					<ButtonPrimary className="self-center rounded-md">
-						Book Now
-					</ButtonPrimary>
 				</div>
 
 				<div className="!mx-auto flex max-w-lg flex-[3] md:px-3 lg:hidden">

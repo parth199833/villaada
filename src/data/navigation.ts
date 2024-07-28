@@ -173,13 +173,14 @@ export const NAVIGATION_DEMO: NavItemType[] = [
 		children: demoChildMenus,
 		isNew: true,
 	},
+	/*
 	{
 		id: ncNanoId(),
 		href: '/',
 		name: 'About Us',
 		type: 'megaMenu',
 		megaMenu: megaMenuDemo,
-	},
+	},*/
 	{
 		id: ncNanoId(),
 		href: '/listing-stay',
