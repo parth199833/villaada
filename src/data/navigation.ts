@@ -270,10 +270,9 @@ export const NAVIGATION_DEMO: NavItemType[] = [
 	},
 	{
 		id: ncNanoId(),
-		href: '/author',
+		href: '/gallery',
 		name: 'Gallery',
 		type: 'dropdown',
-		children: templatesChildrenMenus,
 	},
 
 	{

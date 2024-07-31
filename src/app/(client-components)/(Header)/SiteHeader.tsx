@@ -181,6 +181,28 @@ const SiteHeader = () => {
 		)
 	}
 
+		// FOR DEMO PAGE
+	const renderInquiryForm = () => {
+		return (
+			<div className="ControlSelections relative z-40 hidden lg:block">
+		        <div className='fixed right-3 top-1/2 z-40 flex items-center'>				<Popover className="relative">
+						{({ open }) => (
+							<>
+								<Popover.Button
+									className={`z-10 rounded-xl border border-neutral-200 bg-blue-600 p-2.5 shadow-xl hover:bg-neutral-100 focus:outline-none dark:border-primary-6000 dark:bg-primary-6000 dark:hover:bg-primary-700 ${
+										open ? 'ring-primary-500 focus:ring-2' : ''
+									}`}
+								>
+									 <p>Inquiry Form</p>
+								</Popover.Button>
+								
+							</>
+						)}
+					</Popover></div>
+			</div>
+		)
+	}
+
 	const renderHeader = () => {
 		let headerClassName = 'shadow-sm dark:border-b dark:border-neutral-700'
 		if (PAGES_HIDE_HEADER_BORDER.includes(pathname as PathName)) {
@@ -204,6 +226,7 @@ const SiteHeader = () => {
 	return (
 		<>
 			{renderControlSelections()}
+			{renderInquiryForm()}
 			{renderHeader()}
 			<div ref={anchorRef} className="invisible absolute h-1"></div>
 		</>
