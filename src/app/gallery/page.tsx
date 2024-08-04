@@ -235,7 +235,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { PHOTOS } from './constant'
 
 import { Route } from 'next'
-
+import MainGalleryImage from './MainGalleryImage'
 export interface GalleryPageProps {}
 
 const GalleryPage: FC<GalleryPageProps> = ({}) => {
@@ -250,9 +250,15 @@ const GalleryPage: FC<GalleryPageProps> = ({}) => {
 	}
 
 	return (
-		<div className="nc-ListingStayDetailPage px-5">
+		<div className="nc-ListingStayDetailPage container px-5">
 			{/*  HEADER */}
-			<header className="rounded-md sm:rounded-xl">
+			<div className="mb-10 px-1 sm:px-1">
+				<MainGalleryImage className="" />
+			</div>
+			<h3 className="text-center text-3xl font-bold !leading-[115%] sm:text-4xl md:text-3xl lg:text-3xl xl:text-5xl">
+				Our Gallery
+			</h3>
+			<header className="mt-10 rounded-md sm:rounded-xl">
 				<div className="relative grid grid-cols-3 gap-5 sm:grid-cols-4 sm:gap-5">
 					<div
 						className="relative col-span-2 row-span-3 cursor-pointer overflow-hidden rounded-md sm:row-span-2 sm:rounded-xl"
