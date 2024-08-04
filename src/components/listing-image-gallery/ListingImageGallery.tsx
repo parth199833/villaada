@@ -74,7 +74,8 @@ const ListingImageGallery: FC<Props> = ({ images = DEMO_IMAGE }) => {
 	const handleClose = () => {
 		let params = new URLSearchParams(document.location.search)
 		params.delete('modal')
-		router.push(`${thisPathname}/?${params.toString()}` as Route)
+		// router.push(`${thisPathname}/?${params.toString()}` as Route)
+		router.push(`gallery/?${params.toString()}` as Route)
 	}
 
 	const renderContent = () => {
