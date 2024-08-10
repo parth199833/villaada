@@ -1,7 +1,8 @@
-#Lock 
+#Lock
 package-lock*
 # Logs
 logs
+*.xml
 *.log
 npm-debug.log*
 yarn-debug.log*

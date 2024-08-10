@@ -250,7 +250,7 @@ const GalleryPage: FC<GalleryPageProps> = ({}) => {
 	}
 
 	return (
-		<div className="nc-ListingStayDetailPage container px-5">
+		<div className="nc-ListingStayDetailPage container px-5 mt-5">
 			{/*  HEADER */}
 			<div className="mb-10 px-1 sm:px-1">
 				<MainGalleryImage className="" />

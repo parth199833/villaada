@@ -296,6 +296,13 @@ export const NAVIGATION_DEMO: NavItemType[] = [
 		type: 'dropdown',
 		children: otherPageChildMenus,
 	},
+	{
+		id: ncNanoId(),
+		href: '/book',
+		name: 'Booking Now',
+		type: 'dropdown',
+		children: otherPageChildMenus,
+	},
 ]
 
 export const NAVIGATION_DEMO_2: NavItemType[] = [
