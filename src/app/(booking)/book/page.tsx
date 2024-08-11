@@ -1,6 +1,6 @@
 'use client'
 
-import React, { FC, Fragment, useState } from 'react'
+import React, { FC } from 'react'
 import Input from '@/shared/Input'
 import Label from '@/components/Label'
 import Textarea from '@/shared/Textarea'
@@ -11,9 +11,7 @@ export interface CheckOutPagePageMainProps {
 	className?: string
 }
 
-const CheckOutPagePageMain: FC<CheckOutPagePageMainProps> = ({
-	className = '',
-}) => {
+const BookingMainPage: FC<CheckOutPagePageMainProps> = ({ className = '' }) => {
 	const renderMain = () => {
 		return (
 			<div className="flex w-full flex-col border-neutral-200 shadow-2xl shadow-indigo-500/40 dark:border-neutral-700 sm:rounded-2xl sm:border">
@@ -147,4 +145,4 @@ const CheckOutPagePageMain: FC<CheckOutPagePageMainProps> = ({
 	)
 }
 
-export default CheckOutPagePageMain
+export default BookingMainPage
