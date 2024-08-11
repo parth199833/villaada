@@ -12,9 +12,9 @@ export interface BookingMainPage {}
 const BookingMainPage = () => {
 	return (
 		<div className="flex w-full flex-col border-neutral-200 shadow-2xl shadow-indigo-500/40 dark:border-neutral-700 sm:rounded-2xl sm:border">
-			<div className="rounded-t-2xl bg-primary-6000 py-6">
-				<h2 className="text-center text-3xl font-semibold text-white lg:text-4xl">
-					Villa Ada
+			<div className="py-4">
+				<h2 className="text-center text-3xl font-semibold lg:text-4xl">
+					Booking Form
 				</h2>
 			</div>
 			<div className="border-b border-neutral-200 dark:border-neutral-700"></div>
@@ -74,7 +74,7 @@ const BookingMainPage = () => {
 							</div>
 						</div>
 					</div>
-					<div className="flex flex-col space-y-4 rounded-lg border p-9 hover:bg-neutral-50 dark:hover:bg-neutral-800">
+					<div className="flex flex-col space-y-4 rounded-lg border p-9 hover:bg-neutral-100 dark:hover:bg-neutral-800">
 						{/* <h3 className="text-2xl font-semibold">Price detail</h3> */}
 						<div className="flex justify-between font-semibold text-neutral-6000 dark:text-neutral-300">
 							<span>Stay Amount</span>
