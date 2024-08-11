@@ -7,11 +7,11 @@ import Textarea from '@/shared/Textarea'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import Checkbox from '@/shared/Checkbox'
 
-export interface CheckOutPagePageMainProps {
+export interface BookingMainProps {
 	className?: string
 }
 
-const BookingMainPage: FC<CheckOutPagePageMainProps> = ({ className = '' }) => {
+const BookingMainPage: FC<BookingMainProps> = ({ className = '' }) => {
 	const renderMain = () => {
 		return (
 			<div className="flex w-full flex-col border-neutral-200 shadow-2xl shadow-indigo-500/40 dark:border-neutral-700 sm:rounded-2xl sm:border">
