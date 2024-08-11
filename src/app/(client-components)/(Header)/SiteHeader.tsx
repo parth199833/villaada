@@ -2,8 +2,8 @@
 
 import React, { Fragment, useEffect, useRef, useState } from 'react'
 import {
-	ShoppingBagIcon as ShoppingCartIcon,
 	Cog8ToothIcon as CogIcon,
+	ShoppingBagIcon as ShoppingCartIcon,
 } from '@heroicons/react/24/outline'
 import {
 	Dialog,
@@ -201,17 +201,17 @@ const SiteHeader = () => {
 	const renderInquiryForm = () => {
 		return (
 			<div className="ControlSelections relative z-40 hidden lg:block">
-				<div className="fixed right-3 top-1/2 z-40 flex items-center">
+				<div className="fixed right-1 top-1/2 z-40 flex items-center">
 					<Popover className="relative">
 						{({ open }) => (
 							<>
 								<Popover.Button
-									className={`z-10 rounded-xl border border-neutral-200 bg-white p-2.5 shadow-xl hover:bg-neutral-100 focus:outline-none dark:border-primary-6000 dark:bg-primary-6000 dark:hover:bg-primary-700 ${
+									className={`transform- dark:hover:bg-primary-70 z-10 rotate-90 rounded-xl border border-neutral-200 bg-white p-2.5 shadow-xl hover:bg-neutral-100 focus:outline-none dark:border-primary-6000 dark:bg-primary-6000 ${
 										open ? 'ring-primary-500 focus:ring-2' : ''
 									}`}
 									onClick={openModalMoreFilter}
 								>
-									<CogIcon className="h-8 w-8" />
+									Inquiry
 								</Popover.Button>
 								<Transition appear show={isOpenMoreFilter} as={Fragment}>
 									<Dialog
