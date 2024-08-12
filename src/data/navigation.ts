@@ -284,7 +284,7 @@ export const NAVIGATION_DEMO: NavItemType[] = [
 	},
 	{
 		id: ncNanoId(),
-		href: '/blog',
+		href: '/surrounding',
 		name: 'Surroundings',
 		type: 'dropdown',
 		children: otherPageChildMenus,

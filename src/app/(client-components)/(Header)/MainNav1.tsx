@@ -15,7 +15,7 @@ export interface MainNav1Props {
 const MainNav1: FC<MainNav1Props> = ({ className = '' }) => {
 	return (
 		<div className={`nc-MainNav1 relative z-10 ${className}`}>
-			<div className="relative flex h-15 justify-between px-4">
+			<div className="relative flex h-16 justify-between px-4">
 				<div className="hidden flex-1 justify-start space-x-4 sm:space-x-10 md:flex">
 					<Logo className="w-48 self-center" />
 					<Navigation />
