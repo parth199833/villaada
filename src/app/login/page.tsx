@@ -1,3 +1,4 @@
+"use client"
 import React, { FC } from 'react'
 import facebookSvg from '@/images/Facebook.svg'
 import twitterSvg from '@/images/Twitter.svg'
@@ -6,6 +7,8 @@ import Input from '@/shared/Input'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import Image from 'next/image'
 import Link from 'next/link'
+import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 export interface PageLoginProps {}
 
@@ -27,7 +30,23 @@ const loginSocials = [
 	},
 ]
 
+
+
 const PageLogin: FC<PageLoginProps> = ({}) => {
+	const router=useRouter();
+	const handleSubmit=async(e:any)=>{
+		e.preventDefault();
+		const res = await signIn("credentials", {
+		username: "mustafa",
+		password: "1234",
+		redirect: false, // Change to true to redirect to dashboard after sign in
+		});
+		console.log("signIn success", res);
+		if (res && res.ok) {
+		router.push("/home-2");
+		}
+
+	}
 	return (
 		<div className={`nc-PageLogin`}>
 			<div className="container mb-24 lg:mb-32">
@@ -62,7 +81,7 @@ const PageLogin: FC<PageLoginProps> = ({}) => {
 						<div className="absolute left-0 top-1/2 w-full -translate-y-1/2 transform border border-neutral-100 dark:border-neutral-800"></div>
 					</div>
 					{/* FORM */}
-					<form className="grid grid-cols-1 gap-6" action="#" method="post">
+					<form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit} method="post">
 						<label className="block">
 							<span className="text-neutral-800 dark:text-neutral-200">
 								Email address
