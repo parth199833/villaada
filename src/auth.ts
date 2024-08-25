@@ -1,24 +1,30 @@
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
-import { MongoClient } from "mongodb";
+import { useRaf } from "react-use";
 
-const uri = "mongodb+srv://mustafamandviwala45:S0gq3CrUF3L7k7A8@cluster0.xhy61xa.mongodb.net/"; 
-const client = new MongoClient(uri);
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     Credentials({
       // You can specify which fields should be submitted, by adding keys to the `credentials` object.
       // e.g. domain, username, password, 2FA token, etc.
       credentials: {
-        email: {},
+        username: {},
         password: {},
       },
       authorize: async (credentials) => {
-        let user = {
-          email:"mustafamandviwala@gmail.com",
-          password:"124"
-        }
- 
+        console.log("Credentdial called",credentials);
+        let response = await fetch(`http://localhost:3000/api/users`,{
+          method:"POST",
+          headers:{
+            "content-type":"application/json",
+          },
+          body:JSON.stringify({
+            email:credentials.username,
+            password:credentials.password
+          })
+        });
+        const user = await response.json();
+        console.log("USers from api",user);
         // logic to salt and hash password
        // const pwHash = saltAndHashPassword(credentials.password)
  

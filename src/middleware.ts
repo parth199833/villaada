@@ -18,6 +18,7 @@ export default auth((req) => {
   }
 
   if (req.auth && pathname === "/login") {
+    console.log("Auth /login called");
     const homeUrl = new URL("/home-2", origin);
     return Response.redirect(homeUrl);
   }

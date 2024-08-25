@@ -36,9 +36,12 @@ const PageLogin: FC<PageLoginProps> = ({}) => {
 	const router=useRouter();
 	const handleSubmit=async(e:any)=>{
 		e.preventDefault();
+		const formData=new FormData(e.currentTarget);
+		const email=formData.get('email');
+		const password=formData.get('password');
 		const res = await signIn("credentials", {
-		username: "mustafa",
-		password: "1234",
+		username: email,
+		password: password,
 		redirect: false, // Change to true to redirect to dashboard after sign in
 		});
 		console.log("signIn success", res);
@@ -90,6 +93,7 @@ const PageLogin: FC<PageLoginProps> = ({}) => {
 								type="email"
 								placeholder="example@example.com"
 								className="mt-1"
+								name='email'
 							/>
 						</label>
 						<label className="block">
@@ -99,7 +103,7 @@ const PageLogin: FC<PageLoginProps> = ({}) => {
 									Forgot password?
 								</Link>
 							</span>
-							<Input type="password" className="mt-1" />
+							<Input type="password" className="mt-1" name='password' />
 						</label>
 						<ButtonPrimary type="submit">Continue</ButtonPrimary>
 					</form>
