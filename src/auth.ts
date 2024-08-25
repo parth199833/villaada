@@ -1,5 +1,9 @@
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
+import { MongoClient } from "mongodb";
+
+const uri = "mongodb+srv://mustafamandviwala45:S0gq3CrUF3L7k7A8@cluster0.xhy61xa.mongodb.net/"; 
+const client = new MongoClient(uri);
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     Credentials({
