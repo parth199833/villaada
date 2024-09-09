@@ -1,0 +1,64 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "review": "Amazing service! The team was professional and exceeded my expectations.",
+      "company": "Tech Innovators Inc."
+    },
+    {
+      "id": 2,
+      "name": "Sarah Lee",
+      "review": "I had a wonderful experience. The customer support was quick and very helpful.",
+      "company": "Creative Minds Ltd."
+    },
+    {
+      "id": 3,
+      "name": "Michael Smith",
+      "review": "Fantastic product quality and the attention to detail was impressive.",
+      "company": "Global Ventures Co."
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "review": "Highly recommend! They delivered everything on time and went the extra mile.",
+      "company": "Bright Solutions LLC"
+    },
+    {
+      "id": 5,
+      "name": "David Johnson",
+      "review": "Very satisfied with the level of service. Will definitely use their services again.",
+      "company": "Tech Sphere Pvt Ltd."
+    },
+    {
+      "id": 6,
+      "name": "Anna Williams",
+      "review": "Great communication and reliable service. Couldn't have asked for more.",
+      "company": "NextGen Enterprises"
+    },
+    {
+      "id": 7,
+      "name": "James Brown",
+      "review": "They really understood our needs and delivered exactly what we were looking for.",
+      "company": "Innovative Tech Co."
+    },
+    {
+      "id": 8,
+      "name": "Sophia Wilson",
+      "review": "The best experience I’ve had with a company. Excellent attention to detail!",
+      "company": "Global Horizons Ltd."
+    },
+    {
+      "id": 9,
+      "name": "Daniel Miller",
+      "review": "Professional and efficient. I am beyond satisfied with the results.",
+      "company": "Visionary Solutions LLC"
+    },
+    {
+      "id": 10,
+      "name": "Olivia Moore",
+      "review": "Exceptional service and support. They truly care about their customers.",
+      "company": "FutureTech Industries"
+    }
+  ]
+}

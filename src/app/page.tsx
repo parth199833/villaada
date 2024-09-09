@@ -13,6 +13,7 @@ import SectionGridCategoryBox from "@/components/SectionGridCategoryBox";
 import SectionBecomeAnAuthor from "@/components/SectionBecomeAnAuthor";
 import SectionVideos from "@/components/SectionVideos";
 import SectionClientSay from "@/components/SectionClientSay";
+import Testimonial from "./testimonial/page";
 
 const DEMO_CATS: TaxonomyType[] = [
   {
@@ -165,17 +166,9 @@ function PageHome() {
 
         <SectionHowItWork />
 
-        <div className="relative py-16">
-          <BackgroundSection className="bg-orange-50 dark:bg-black/20" />
-          <SectionSliderNewCategories
-            categories={DEMO_CATS_2}
-            categoryCardType="card4"
-            itemPerRow={4}
-            heading="Suggestions for discovery"
-            subHeading="Popular places to stay that Chisfis recommends for you"
-            sliderStyle="style2"
-          />
-        </div>
+        {/* <div className="relative py-16" id ="testimonial"> */}
+          <Testimonial/>
+        {/* </div> */}
 
         <SectionSubscribe2 />
 
