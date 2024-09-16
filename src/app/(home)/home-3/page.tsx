@@ -14,6 +14,7 @@ import SectionBecomeAnAuthor from '@/components/SectionBecomeAnAuthor'
 import Heading from '@/shared/Heading'
 import TermsAndConditions from '@/components/TermsAndCondition'
 import ContactUs from '@/components/ContactUs'
+import Testimonials from '../../testimonial/page'
 
 const DEMO_CATS_2: TaxonomyType[] = [
 	{
@@ -144,16 +145,8 @@ function PageHome3() {
 				</div>
 			</div>
 			{/* SECTION 5 */}
-			<div className="container relative mb-24 py-16">
-				<BackgroundSection className="bg-orange-50 dark:bg-black/20" />
-				<SectionSliderNewCategories
-					categories={DEMO_CATS_2}
-					categoryCardType="card4"
-					itemPerRow={4}
-					heading="Testimonial"
-					subHeading="What customers said about our villa"
-					sliderStyle="style2"
-				/>
+			<div className="container relative mb-24 py-16" id="TEST">
+				<Testimonials/>
 			</div>
 			{/* SECTION 6 */}
 			<div className="container mb-24 px-1 sm:px-4">

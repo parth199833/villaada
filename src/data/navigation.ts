@@ -84,6 +84,7 @@ const demoChildMenus: NavItemType[] = [
 const otherPageChildMenus: NavItemType[] = [
 	{ id: ncNanoId(), href: '/add-listing/1' as Route, name: '+ Add listing' },
 	{ id: ncNanoId(), href: '/blog', name: 'Blog page' },
+	{ id: ncNanoId(), href: '/#testimonial', name: 'Testimonial page' },
 	{ id: ncNanoId(), href: '/blog/single' as Route, name: 'Blog single' },
 	{ id: ncNanoId(), href: '/about', name: 'About' },
 	{ id: ncNanoId(), href: '/contact', name: 'Contact us' },
@@ -277,7 +278,7 @@ export const NAVIGATION_DEMO: NavItemType[] = [
 
 	{
 		id: ncNanoId(),
-		href: '/blog',
+		href: '/#testimonial',
 		name: 'Testimonial',
 		type: 'dropdown',
 		children: otherPageChildMenus,

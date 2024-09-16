@@ -141,3 +141,11 @@ export interface CarDataType {
     lng: number;
   };
 }
+
+
+export interface TestimonialDataTypes {
+  id:  number | string;
+  name: string;
+  review: string;
+  company: string;
+}
