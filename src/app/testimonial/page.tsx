@@ -9,17 +9,17 @@ import TestimonialPopUpModel from "@/components/TestimonialPopUpModel";
 
 function Testimonial() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
-	const [currentPage, setCurrentPage] = useState(0);
-	const itemsPerPage = 3; // Number of items per page
+	const [activeIndex, setActiveIndex] = useState(0); // Tracks the currently active testimonial
+	const itemsPerPage = 3; // Show 3 items at a time
 
-	// Auto slide interval
+	// Auto-slide every 5 seconds
 	useEffect(() => {
 		const interval = setInterval(() => {
-			handleNextPage();
-		}, 5000); // Auto-slide every 5 seconds
+			handleNext();
+		}, 5000);
 
 		return () => clearInterval(interval); // Clear interval on component unmount
-	}, [currentPage]);
+	}, [activeIndex]);
 
 	const handleOpenModal = () => {
 		setIsModalOpen(true);
@@ -29,29 +29,30 @@ function Testimonial() {
 		setIsModalOpen(false);
 	};
 
-	const handleNextPage = () => {
-		// Loop back to first page after reaching the last set of testimonials
-		if ((currentPage + 1) * itemsPerPage < DEMO_TESTIMONIAL.length) {
-			setCurrentPage(currentPage + 1);
+	const handleNext = () => {
+		// Slide to the next testimonial
+		if (activeIndex < DEMO_TESTIMONIAL.length - 1) {
+			setActiveIndex(activeIndex + 1);
 		} else {
-			setCurrentPage(0); // Loop back to the start
+			setActiveIndex(0); // Loop back to the first testimonial
 		}
 	};
 
-	const handlePrevPage = () => {
-		// Loop to the last set of testimonials when going backward from the first set
-		if (currentPage > 0) {
-			setCurrentPage(currentPage - 1);
+	const handlePrev = () => {
+		// Slide to the previous testimonial
+		if (activeIndex > 0) {
+			setActiveIndex(activeIndex - 1);
 		} else {
-			setCurrentPage(Math.floor(DEMO_TESTIMONIAL.length / itemsPerPage) - 1);
+			setActiveIndex(DEMO_TESTIMONIAL.length - 1); // Loop back to the last testimonial
 		}
 	};
 
-	// Slice the testimonials to display only the current page
-	const paginatedTestimonials = DEMO_TESTIMONIAL.slice(
-		currentPage * itemsPerPage,
-		(currentPage + 1) * itemsPerPage
-	);
+	// Determine the slice of testimonials to show (3 at a time)
+	const visibleTestimonials = [
+		DEMO_TESTIMONIAL[activeIndex % DEMO_TESTIMONIAL.length],
+		DEMO_TESTIMONIAL[(activeIndex + 1) % DEMO_TESTIMONIAL.length],
+		DEMO_TESTIMONIAL[(activeIndex + 2) % DEMO_TESTIMONIAL.length],
+	];
 
 	return (
 		<main
@@ -74,20 +75,19 @@ function Testimonial() {
 				{/* Previous Button */}
 				<button
 					className="absolute w-8 h-8 left-3 top-[calc(50%-16px)] bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-6000 dark:hover:border-neutral-500 rounded-full flex items-center justify-center hover:border-neutral-300 focus:outline-none"
-					onClick={handlePrevPage}
+					onClick={handlePrev}
 				>
 					<ChevronLeftIcon className="h-4 w-4" />
 				</button>
 
 				{/* Testimonial Cards */}
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-					{paginatedTestimonials.map((testimonial, index) => (
+					{visibleTestimonials.map((testimonial, index) => (
 						<TestimonialCard
 							key={testimonial.id}
 							data={testimonial}
-							// Apply a different background color for the middle card
-							className={`my-class ${index === 1 ? "bg-purple-200" : "bg-white"
-								}`} // Highlight and change the middle card color
+							className={`my-class ${index === 1 ? "bg-blue-200 shadow-lg" : "bg-white"
+								}`} // Highlight the active card
 							size="default"
 						/>
 					))}
@@ -96,7 +96,7 @@ function Testimonial() {
 				{/* Next Button */}
 				<button
 					className="absolute w-8 h-8 right-3 top-[calc(50%-16px)] bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-6000 dark:hover:border-neutral-500 rounded-full flex items-center justify-center hover:border-neutral-300 focus:outline-none"
-					onClick={handleNextPage}
+					onClick={handleNext}
 				>
 					<ChevronRightIcon className="h-4 w-4" />
 				</button>
